@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+*$py.class
+*.pyc
+
+# Environments
+.env
+.venv
+
+# Poetry
+.poetry/
+
+.ipynb_checkpoints
+
+# VSCode
+.vscode/
