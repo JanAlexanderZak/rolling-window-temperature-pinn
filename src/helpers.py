@@ -17,3 +17,30 @@ def generate_mockup_loss(epoch, base_reduction_factor=1.0):
 
     loss = max(0.05, (func + noise) * base_reduction_factor)
     return loss
+
+
+DEFAULT_LAYOUT = {
+    'xaxis': {
+        'showline': True, 
+        'linewidth': 2,
+        'linecolor': 'black',
+        'mirror': 'ticks',
+        'showgrid': True,
+        'gridwidth': 1, 
+        'gridcolor': 'gray',
+        'tickformat': '.1f',
+        'range': [0, None],
+    },
+    'yaxis': {
+        'showline': True,
+        'linewidth': 2,
+        'linecolor': 'black',
+        'mirror': 'ticks',
+        'showgrid': True,
+        'gridwidth': 1,
+        'gridcolor': 'gray',
+        #'tickformat': '.1f',
+        'range': [0, None],
+    },
+    'plot_bgcolor': 'white'
+}
