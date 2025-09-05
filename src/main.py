@@ -1,6 +1,6 @@
 import plotly.graph_objects as go
 
-from helpers import generate_mockup_loss
+from helpers import generate_mockup_loss, DEFAULT_LAYOUT
 from rolling_window_scheduler import MockupRollingReduceLROnPlateauRollingWindow
 from temperature_dependent_update import compare_efficiency
 
@@ -90,6 +90,7 @@ if __name__ == "__main__":
         font=dict(color="orange", size=12),
     )
 
+    fig = fig.update_layout(DEFAULT_LAYOUT)
     fig = fig.update_layout(
         xaxis_title="Epoch",
         yaxis_title="Loss",
@@ -108,9 +109,11 @@ if __name__ == "__main__":
             xanchor="right",
             x=0.99
         ),
-        font=dict(size=20),
+        font=dict(size=17),
         width=1000, height=600,
     )
+
+
 
     fig.write_image("src/plots/rolling_window_scheduler.png", scale=2)
     fig.write_html("src/plots/rolling_window_scheduler.html")
@@ -152,9 +155,9 @@ if __name__ == "__main__":
         text=[f'{t:.3f} ms' for t in times_ms],
         textposition='auto'
     ))
-    
+
+    fig = fig.update_layout(DEFAULT_LAYOUT)
     fig.update_layout(
-        title='Interpolation Methods Performance',
         xaxis_title='Method',
         yaxis_title='Execution Time (ms)',
         #yaxis_type='log',
